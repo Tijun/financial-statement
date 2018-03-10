@@ -24,6 +24,7 @@ public class UserTableAttr extends BaseTableAttr{
      * 利用 TableField 可以实现多表连接查询
      *  需要有方法来把这些字段生成部分SQL比如这里是 SELECT uuid, FROM user
      *  生成base colomn nick_name,password, 可以考虑把他们放到列表里面
+     *  测试参考
      */
 
 }
