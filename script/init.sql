@@ -21,7 +21,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `t_consum_records`;
 CREATE TABLE `t_consum_records` (
   `id` int(11) NOT NULL AUTO_INCREMENT, /*主键*/
-  `consum_time` datetime DEFAULT NULL, /*消费时间*/
+  `consum_time` timestamp DEFAULT NULL, /*消费时间*/
   `consum_money` int(11) DEFAULT NULL, /*消费金额*/
   `consum_type` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL, /*消费类型*/
   `trade_method` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,  /*消费方法  例:支付宝,现金，微信*/
@@ -39,7 +39,7 @@ CREATE TABLE `t_consum_records` (
 DROP TABLE IF EXISTS `t_expend`;
 CREATE TABLE `t_expend` (
   `id` int(11) NOT NULL AUTO_INCREMENT, /*主键*/
-  `expend_time` datetime DEFAULT NULL, /* 支出时间*/
+  `expend_time` timestamp DEFAULT NULL, /* 支出时间*/
   `money` decimal(10,2) DEFAULT NULL,  /* 支出金额*/
   `detail` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL, /* 支出详细*/
   PRIMARY KEY (`id`)
@@ -56,7 +56,7 @@ DROP TABLE IF EXISTS `t_income`;
 CREATE TABLE `t_income` (
   `id` int(11) NOT NULL AUTO_INCREMENT, /*主键*/
   `source` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL, /*收入来源 例：工资，投资，奖金*/
-  `income_time` datetime DEFAULT NULL, /*收入时间*/
+  `income_time` timestamp DEFAULT NULL, /*收入时间*/
   `money` decimal(10,2) NOT NULL,  /*收入金额*/
   `detail` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL, /*收入详情*/
   PRIMARY KEY (`id`)
@@ -74,7 +74,7 @@ CREATE TABLE `t_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,  /*主键*/
   `username` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,  /*账号*/
   `password` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,  /*密码*/
-  `register_time` datetime DEFAULT NULL, /*注册时间*/
+  `register_time` timestamp DEFAULT NULL, /*注册时间*/
   `email` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL, /*个人邮箱 可通过这个来找回密码*/
   `consum_records_id` int(11) DEFAULT NULL, /*关联个人消费表*/
   `expend_id` int(11) DEFAULT NULL, /*关联个人支出表*/
